@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Form = (props) => {
-    const {searchPhotos,setQuery,query} = props
+const SearchBar = (props: { query: string | number, setQuery: (value) => void }) => {
+    const { query, setQuery } = props
 
     return (
-        <form className="form" onSubmit={searchPhotos}>
+        <form className="form">
             <input
                 type="text"
                 name="query"
@@ -13,11 +13,8 @@ const Form = (props) => {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
             />
-            <button type="submit" className="button">
-                Search
-            </button>
         </form>
     )
 }
 
-export default Form
+export default SearchBar;
